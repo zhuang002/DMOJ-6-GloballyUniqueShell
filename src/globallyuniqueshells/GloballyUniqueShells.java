@@ -49,6 +49,7 @@ public class GloballyUniqueShells {
         else {
             return arrayContains(array,middle+1,end,element);
         }
+        
     }
     
 }
