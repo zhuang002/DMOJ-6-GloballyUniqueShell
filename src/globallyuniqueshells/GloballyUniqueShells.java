@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -21,8 +21,9 @@ public class GloballyUniqueShells {
         // TODO code application logic here
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
+        int noRight=sc.nextInt();
         int noLeft=sc.nextInt();
-        int[] rights=new int[sc.nextInt()];
+        int[] rights=new int[noRight];
         int count=0;
         for (int i=0;i<rights.length;i++) {
             rights[i]=sc.nextInt();
