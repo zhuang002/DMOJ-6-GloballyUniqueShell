@@ -5,7 +5,7 @@
  */
 package globallyuniqueshells;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -23,34 +23,16 @@ public class GloballyUniqueShells {
         int n=sc.nextInt();
         int noRight=sc.nextInt();
         int noLeft=sc.nextInt();
-        int[] rights=new int[noRight];
+        ArrayList<Integer> rights=new ArrayList();
         int count=0;
-        for (int i=0;i<rights.length;i++) {
-            rights[i]=sc.nextInt();
+        for (int i=0;i<noRight;i++) {
+            rights.add(sc.nextInt());
         }
-        Arrays.sort(rights);
-        
+
         for (int i=0;i<noLeft;i++) {
-            if (arrayContains(rights,0,rights.length-1,sc.nextInt()))
+            if (rights.contains(sc.nextInt()))
                 count++;
         }
         System.out.println(n-count);
     }
-
-    private static boolean arrayContains(int[] array, int start, int end,int element) {
-        if (start>end) return false;
-        if (end>=array.length) return false;
-        if (start==end) return array[start]==element;
-        
-        int middle=(start+end)/2;
-        if (array[middle]==element) return true;
-        else if (array[middle]>element) {
-            return arrayContains(array,start,middle-1,element);
-        }
-        else {
-            return arrayContains(array,middle+1,end,element);
-        }
-        
-    }
-    
 }
